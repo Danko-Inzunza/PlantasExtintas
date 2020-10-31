@@ -16,3 +16,17 @@ Plantas extintas base de datos de la [*IUCN*](https://www.iucnredlist.org/)
 *cursiva*
 **negrita**
 
+
+## Trabajando con los datos
+
+cargar los paquetes necesarios para trabajar
+
+```{r}
+library(tidyverse)
+```
+
+Ahora voy a leer los datos con los que voy a trabajar 
+```{r}
+plants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
+
+```
