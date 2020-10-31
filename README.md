@@ -34,7 +34,7 @@ library(tidyverse)
 Ahora voy a leer los datos con los que voy a trabajar
 
 ``` r
-plants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
+plants = readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
 ```
 
     ## Parsed with column specification:
@@ -49,3 +49,21 @@ plants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tid
     ## )
 
     ## See spec(...) for full column specifications.
+
+## Filtrando los datos
+
+El ejercicio sera para dejar solo las plantas de chile
+
+``` r
+Chile = plants %>%
+  dplyr::filter(country == "Chile") %>% 
+  dplyr::select(binomial_name, country)
+
+Chile
+```
+
+    ## # A tibble: 2 x 2
+    ##   binomial_name           country
+    ##   <chr>                   <chr>  
+    ## 1 Santalum fernandezianum Chile  
+    ## 2 Sophora toromiro        Chile
